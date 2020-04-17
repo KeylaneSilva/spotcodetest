@@ -9531,3 +9531,333 @@ Processing by Api::V1::FavoritesController#index as JSON
 Completed 200 OK in 80ms (Views: 42.3ms | ActiveRecord: 4.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-04-17 14:30:28 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-17 14:30:28 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 257ms (Views: 251.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-17 14:30:36 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wcSQ9/fhpLYBB4wpjunrl0d8sGVn6Smb4bDNyi5Ns3CYRAblqCgISdyUEh8+kr2a+TcuBkcBiET8gMWsXUI45g==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wcSQ9/fhpLYBB4wpjunrl0d8sGVn6Smb4bDNyi5Ns3CYRAblqCgISdyUEh8+kr2a+TcuBkcBiET8gMWsXUI45g==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 131ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-04-17 14:30:39 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/registrations/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-17 14:30:45 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m0L9LqCpog4KED+2WdGrNXCzTG1oX1eTjJbzKkf9f5BViM9B2LoAMofVRdsmd7U1mLesUKdrZAGdFYGCMBXlsw==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "keylane@gmail.com"], ["encrypted_password", "$2a$11$bNkjOrCbkzNHJTAwSTxfXeTOE5V.1x6DkQXKLc9TG1UyTPG740v.2"], ["created_at", "2020-04-17 17:30:45.573500"], ["updated_at", "2020-04-17 17:30:45.573500"]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (96.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 244ms (ActiveRecord: 96.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 14:30:45 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/favorites" for 127.0.0.1 at 2020-04-17 14:30:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favorites"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:08:17 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-17 15:08:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.5.0/gems/devise-4.7.1/app/views/devise/sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 167ms (Views: 164.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-17 15:08:22 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JFwaygfDVRxqByGTwsm7YYxlMHWmUqt+e/aQoQ3mzyQzdxiY5UPDaJAJLezLEdjHAMQFNR/8+iLjgmu5N8z3fw==", "user"=>{"email"=>"keylane@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "keylane@gmail.com"], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 115ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:08:22 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:22:15 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/keylane/Github/spotcodetest/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 82e5689ce6292fe42e6a
+Version: webpack 4.42.1
+Time: 3386ms
+Built at: 2020-04-17 15:22:20
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js   4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map    4.5 KiB  application  [emitted] [dev]        application
+    js/hello_react-8b916d6cd49bf75d7731.js   1.05 MiB  hello_react  [emitted] [immutable]  hello_react
+js/hello_react-8b916d6cd49bf75d7731.js.map   1.21 MiB  hello_react  [emitted] [dev]        hello_react
+                             manifest.json  703 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint hello_react = js/hello_react-8b916d6cd49bf75d7731.js js/hello_react-8b916d6cd49bf75d7731.js.map
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+    + 15 hidden modules
+
+Completed 200 OK in 4932ms (Views: 4910.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:31:23 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 84.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:47:10 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/keylane/Github/spotcodetest/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 1490b1376384fa9d7411
+Version: webpack 4.42.1
+Time: 891ms
+Built at: 2020-04-17 15:47:12
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js   4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map    4.5 KiB  application  [emitted] [dev]        application
+       js/spotcode-0070fcaffd345113d2d1.js   1.02 MiB     spotcode  [emitted] [immutable]  spotcode
+   js/spotcode-0070fcaffd345113d2d1.js.map   1.18 MiB     spotcode  [emitted] [dev]        spotcode
+                             manifest.json  682 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint spotcode = js/spotcode-0070fcaffd345113d2d1.js js/spotcode-0070fcaffd345113d2d1.js.map
+[./app/javascript/app.js] 376 bytes {spotcode} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/spotcode.jsx] 472 bytes {spotcode} [built]
+    + 11 hidden modules
+
+Completed 200 OK in 1767ms (Views: 1754.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:53:04 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/keylane/Github/spotcodetest/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 1d0f95922c2af88b830c
+Version: webpack 4.42.1
+Time: 3277ms
+Built at: 2020-04-17 15:53:09
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js   4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map    4.5 KiB  application  [emitted] [dev]        application
+       js/spotcode-142be2dbad60ba2e119d.js   1.96 MiB     spotcode  [emitted] [immutable]  spotcode
+   js/spotcode-142be2dbad60ba2e119d.js.map   2.21 MiB     spotcode  [emitted] [dev]        spotcode
+                             manifest.json  682 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint spotcode = js/spotcode-142be2dbad60ba2e119d.js js/spotcode-142be2dbad60ba2e119d.js.map
+[./app/javascript/app.js] 686 bytes {spotcode} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/spotcode.jsx] 472 bytes {spotcode} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {spotcode} [built]
+    + 20 hidden modules
+
+Completed 200 OK in 4684ms (Views: 4671.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:55:17 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/keylane/Github/spotcodetest/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: 1d0f95922c2af88b830c
+Version: webpack 4.42.1
+Time: 1600ms
+Built at: 2020-04-17 15:55:19
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js   4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map    4.5 KiB  application  [emitted] [dev]        application
+       js/spotcode-142be2dbad60ba2e119d.js   1.96 MiB     spotcode  [emitted] [immutable]  spotcode
+   js/spotcode-142be2dbad60ba2e119d.js.map   2.21 MiB     spotcode  [emitted] [dev]        spotcode
+                             manifest.json  682 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint spotcode = js/spotcode-142be2dbad60ba2e119d.js js/spotcode-142be2dbad60ba2e119d.js.map
+[./app/javascript/app.js] 686 bytes {spotcode} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/spotcode.jsx] 472 bytes {spotcode} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {spotcode} [built]
+    + 20 hidden modules
+
+Completed 200 OK in 2406ms (Views: 2401.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:55:21 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 36.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:55:23 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 15:55:25 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 35.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-17 16:00:16 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/keylane/Github/spotcodetest/public/packs
+[Webpacker] warning ../../package.json: No license field
+
+[Webpacker] Hash: e76aed4d8e253d1b63eb
+Version: webpack 4.42.1
+Time: 1931ms
+Built at: 2020-04-17 16:00:19
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-2181adcc3224cdc0c9c1.js   4.72 KiB  application  [emitted] [immutable]  application
+js/application-2181adcc3224cdc0c9c1.js.map    4.5 KiB  application  [emitted] [dev]        application
+       js/spotcode-a91e31fc6b025ee0bdac.js   2.02 MiB     spotcode  [emitted] [immutable]  spotcode
+   js/spotcode-a91e31fc6b025ee0bdac.js.map   2.26 MiB     spotcode  [emitted] [dev]        spotcode
+                             manifest.json  682 bytes               [emitted]              
+Entrypoint application = js/application-2181adcc3224cdc0c9c1.js js/application-2181adcc3224cdc0c9c1.js.map
+Entrypoint spotcode = js/spotcode-a91e31fc6b025ee0bdac.js js/spotcode-a91e31fc6b025ee0bdac.js.map
+[./app/javascript/app.js] 705 bytes {spotcode} [built]
+[./app/javascript/app.scss] 686 bytes {spotcode} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/packs/spotcode.jsx] 472 bytes {spotcode} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/app.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/app.scss 52.3 KiB {spotcode} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {spotcode} [built]
+    + 20 hidden modules
+
+Completed 200 OK in 2756ms (Views: 2752.2ms | ActiveRecord: 0.1ms)
+
+
