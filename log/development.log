@@ -13359,3 +13359,234 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:40:21 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 82ms (Views: 73.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:41:04 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:42:43 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 64ms (Views: 53.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:43:19 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:44:00 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:45:13 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 76ms (Views: 67.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:47:14 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:47:59 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:48:14 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:48:51 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:51:52 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:54:43 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 112ms (Views: 103.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:56:03 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:56:15 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 50ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:56:20 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:57:13 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 93ms (Views: 82.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:58:53 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 20:59:01 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 110ms (Views: 94.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 21:00:00 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 21:03:52 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-17 21:04:54 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2f248b465e87a8800d0362b55a3b16f9d7173888/gubernator.jpg" for 127.0.0.1 at 2020-04-17 21:04:55 -0300
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ffbb0eea38171a0cd8c85f977e3bf2e4f9996775/the_great_bear.jpg" for 127.0.0.1 at 2020-04-17 21:04:55 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ffbb0eea38171a0cd8c85f977e3bf2e4f9996775", "filename"=>"the_great_bear"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b56f4c80ed66afda06173d0530bbf8c720ad7ae0/barcelona.jpg" for 127.0.0.1 at 2020-04-17 21:04:55 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2f248b465e87a8800d0362b55a3b16f9d7173888", "filename"=>"gubernator"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b56f4c80ed66afda06173d0530bbf8c720ad7ae0", "filename"=>"barcelona"}
+Filter chain halted as :set_blob rendered or redirected
+Completed 404 Not Found in 161ms (ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :set_blob rendered or redirected
+Completed 404 Not Found in 161ms (ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :set_blob rendered or redirected
+Completed 404 Not Found in 154ms (ActiveRecord: 0.0ms)
+
+
