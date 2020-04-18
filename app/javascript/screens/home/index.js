@@ -42,7 +42,7 @@ const HomeScreen = () => {
       </Columns>
       <Columns className="has-text-centered">
         <Columns.Column>
-          <a href='users/sing_up'>
+          <a href='users/sign_up'>
             <ButtonSubscribe className='is-success is-outlined is-large has-text-white'>CADASTRAR AGORA</ButtonSubscribe> 
           </a>
         </Columns.Column>
