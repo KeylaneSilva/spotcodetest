@@ -24903,3 +24903,195 @@ Processing by ActiveStorage::DiskController#show as JPEG
 Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
 
 
+Started GET "/album/2" for 127.0.0.1 at 2020-04-18 23:07:44 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"album/2"}
+  [1m[36mUser Load (21.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 732ms (Views: 670.2ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/api/v1/albums/2" for 127.0.0.1 at 2020-04-18 23:07:46 -0300
+Processing by Api::V1::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/albums_controller.rb:3
+  Rendering api/v1/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:3
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 7]]
+  ↳ app/models/user.rb:11
+  Rendered api/v1/albums/show.json.jbuilder (79.0ms)
+Completed 200 OK in 83ms (Views: 77.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:07:46 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxMjo0Ni44OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--a01d70d9145a7b52bb26de69509685fc71ed561e/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxMjo0Ni44OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--a01d70d9145a7b52bb26de69509685fc71ed561e/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxMjo0Ni44OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--a01d70d9145a7b52bb26de69509685fc71ed561e/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:07:46 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxMjo0Ni44OTBaIiwicHVyIjoiYmxvYl9rZXkifX0=--a01d70d9145a7b52bb26de69509685fc71ed561e", "filename"=>"the_great_bear"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/album/2" for 127.0.0.1 at 2020-04-18 23:09:04 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"album/2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/albums/2" for 127.0.0.1 at 2020-04-18 23:09:05 -0300
+Processing by Api::V1::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/albums_controller.rb:3
+  Rendering api/v1/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:3
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 7]]
+  ↳ app/models/user.rb:11
+  Rendered api/v1/albums/show.json.jbuilder (39.5ms)
+Completed 200 OK in 47ms (Views: 39.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:09:05 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDowNS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--74f73d8ed6220330aa1044ecde3cff316da5bbae/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDowNS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--74f73d8ed6220330aa1044ecde3cff316da5bbae/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDowNS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--74f73d8ed6220330aa1044ecde3cff316da5bbae/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:09:05 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDowNS4xODBaIiwicHVyIjoiYmxvYl9rZXkifX0=--74f73d8ed6220330aa1044ecde3cff316da5bbae", "filename"=>"the_great_bear"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/album/2" for 127.0.0.1 at 2020-04-18 23:09:23 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"album/2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 95ms (Views: 82.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/albums/2" for 127.0.0.1 at 2020-04-18 23:09:24 -0300
+Processing by Api::V1::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/albums_controller.rb:3
+  Rendering api/v1/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:3
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 7]]
+  ↳ app/models/user.rb:11
+  Rendered api/v1/albums/show.json.jbuilder (29.2ms)
+Completed 200 OK in 40ms (Views: 32.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:09:24 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDoyNC45MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--5f078d24fa211edd83a3225de965500a9eefb8f3/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDoyNC45MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--5f078d24fa211edd83a3225de965500a9eefb8f3/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDoyNC45MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--5f078d24fa211edd83a3225de965500a9eefb8f3/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 23:09:24 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMjoxNDoyNC45MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--5f078d24fa211edd83a3225de965500a9eefb8f3", "filename"=>"the_great_bear"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms)
+
+

@@ -12,14 +12,14 @@
     },
     "spotcode": {
       "js": [
-        "/packs/js/spotcode-1ddd290cf0bbb23c7c7a.js"
+        "/packs/js/spotcode-0d100542858fa8b1732e.js"
       ],
       "js.map": [
-        "/packs/js/spotcode-1ddd290cf0bbb23c7c7a.js.map"
+        "/packs/js/spotcode-0d100542858fa8b1732e.js.map"
       ]
     }
   },
   "media/assets/images/logo.png": "/packs/media/assets/images/logo-2fe8a8a451f38581257cbe7a3c9a501e.png",
-  "spotcode.js": "/packs/js/spotcode-1ddd290cf0bbb23c7c7a.js",
-  "spotcode.js.map": "/packs/js/spotcode-1ddd290cf0bbb23c7c7a.js.map"
+  "spotcode.js": "/packs/js/spotcode-0d100542858fa8b1732e.js",
+  "spotcode.js.map": "/packs/js/spotcode-0d100542858fa8b1732e.js.map"
 }
