@@ -24293,3 +24293,549 @@ Completed 200 OK in 93ms (Views: 55.0ms | ActiveRecord: 1.9ms)
 Completed 200 OK in 100ms (Views: 43.4ms | ActiveRecord: 3.1ms)
 
 
+Started GET "/discovery" for 127.0.0.1 at 2020-04-18 22:40:08 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 24.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/dashboard" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Processing by Api::V1::DashboardController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRecentlyHeard Load (0.3ms)[0m  [1m[34mSELECT  "recently_heards".* FROM "recently_heards" WHERE "recently_heards"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 4]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  Rendering api/v1/dashboard/index.json.jbuilder
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  Rendered api/v1/dashboard/index.json.jbuilder (60.8ms)
+Completed 200 OK in 99ms (Views: 61.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--484f9936f282cdc483ab34bf1c628a8a43e69a90/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa8757a2011fdd8d648bc84525892e68b72d7630/gubernator.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--484f9936f282cdc483ab34bf1c628a8a43e69a90/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa8757a2011fdd8d648bc84525892e68b72d7630", "filename"=>"gubernator"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: LvMHoqkGoZsJJMX1wo8KH881 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODlaIiwicHVyIjoiYmxvYl9rZXkifX0=--e4b5a8b31058d0133bfe3da10e4fcd6b0d2d6e0c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODlaIiwicHVyIjoiYmxvYl9rZXkifX0=--e4b5a8b31058d0133bfe3da10e4fcd6b0d2d6e0c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d97f7cfcc6865137bf4bf09cc410d079f45bd427/inside.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d97f7cfcc6865137bf4bf09cc410d079f45bd427", "filename"=>"inside"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: FMDDNxi3FYD9YX3jdpMgaqWy (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS44MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b18137829b7c38cb3322db30f6dc7a0688f4766/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS44MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b18137829b7c38cb3322db30f6dc7a0688f4766/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--484f9936f282cdc483ab34bf1c628a8a43e69a90/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--484f9936f282cdc483ab34bf1c628a8a43e69a90", "filename"=>"the_great_bear"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODlaIiwicHVyIjoiYmxvYl9rZXkifX0=--e4b5a8b31058d0133bfe3da10e4fcd6b0d2d6e0c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS44MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b18137829b7c38cb3322db30f6dc7a0688f4766/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg" for 127.0.0.1 at 2020-04-18 22:40:09 -0300
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"gubernator.jpg\"; filename*=UTF-8''gubernator.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS43ODlaIiwicHVyIjoiYmxvYl9rZXkifX0=--e4b5a8b31058d0133bfe3da10e4fcd6b0d2d6e0c", "filename"=>"gubernator"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"inside.jpg\"; filename*=UTF-8''inside.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NTowOS44MDFaIiwicHVyIjoiYmxvYl9rZXkifX0=--2b18137829b7c38cb3322db30f6dc7a0688f4766", "filename"=>"inside"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/discovery" for 127.0.0.1 at 2020-04-18 22:41:10 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"discovery"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/dashboard" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by Api::V1::DashboardController#index as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mRecentlyHeard Load (0.2ms)[0m  [1m[34mSELECT  "recently_heards".* FROM "recently_heards" WHERE "recently_heards"."user_id" = ? ORDER BY created_at DESC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 4]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mAlbum Load (0.1ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mCACHE Album Load (0.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:12
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/dashboard_controller.rb:17
+  Rendering api/v1/dashboard/index.json.jbuilder
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:4
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 14], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/views/api/v1/dashboard/index.json.jbuilder:5
+  Rendered api/v1/dashboard/index.json.jbuilder (17.9ms)
+Completed 200 OK in 37ms (Views: 19.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3f5d4abbac489358ede7473187e8713a4c0139f8/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3f5d4abbac489358ede7473187e8713a4c0139f8/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa8757a2011fdd8d648bc84525892e68b72d7630/gubernator.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aa8757a2011fdd8d648bc84525892e68b72d7630", "filename"=>"gubernator"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: LvMHoqkGoZsJJMX1wo8KH881 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--7a23604d252331326d5403cff61c0745be7c7f6c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--7a23604d252331326d5403cff61c0745be7c7f6c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d97f7cfcc6865137bf4bf09cc410d079f45bd427/inside.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d97f7cfcc6865137bf4bf09cc410d079f45bd427", "filename"=>"inside"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.4ms) [0m[34mGenerated URL for file at key: FMDDNxi3FYD9YX3jdpMgaqWy (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f597b383a075e4871f0c029c41c6fceb426883c5/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f597b383a075e4871f0c029c41c6fceb426883c5/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3f5d4abbac489358ede7473187e8713a4c0139f8/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--7a23604d252331326d5403cff61c0745be7c7f6c/gubernator.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22gubernator.jpg%22%3B+filename%2A%3DUTF-8%27%27gubernator.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NTJaIiwicHVyIjoiYmxvYl9rZXkifX0=--3f5d4abbac489358ede7473187e8713a4c0139f8", "filename"=>"the_great_bear"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f597b383a075e4871f0c029c41c6fceb426883c5/inside.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22inside.jpg%22%3B+filename%2A%3DUTF-8%27%27inside.jpg" for 127.0.0.1 at 2020-04-18 22:41:11 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"inside.jpg\"; filename*=UTF-8''inside.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRSazFFUkU1NGFUTkdXVVE1V1ZnemFtUndUV2RoY1ZkNUJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSS9hVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlhVzV6YVdSbExtcHdaeUk3SUdacGJHVnVZVzFsS2oxVlZFWXRPQ2NuYVc1emFXUmxMbXB3WndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVIiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40ODZaIiwicHVyIjoiYmxvYl9rZXkifX0=--f597b383a075e4871f0c029c41c6fceb426883c5", "filename"=>"inside"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"gubernator.jpg\"; filename*=UTF-8''gubernator.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRUSFpOU0c5eGEwZHZXbk5LU2sxWU1YZHZPRXRJT0RneEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSkhhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlaM1ZpWlhKdVlYUnZjaTVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkoyZDFZbVZ5Ym1GMGIzSXVhbkJuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0NjoxMS40NjZaIiwicHVyIjoiYmxvYl9rZXkifX0=--7a23604d252331326d5403cff61c0745be7c7f6c", "filename"=>"gubernator"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/albums/2" for 127.0.0.1 at 2020-04-18 22:42:43 -0300
+Processing by Api::V1::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/albums_controller.rb:3
+  Rendering api/v1/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:3
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 7]]
+  ↳ app/models/user.rb:11
+  Rendered api/v1/albums/show.json.jbuilder (87.7ms)
+Completed 200 OK in 120ms (Views: 84.3ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:42:45 -0300
+Processing by Api::V1::FavoritesController#create as JSON
+  Parameters: {"favoritable_type"=>"Song", "id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5], ["created_at", "2020-04-19 01:42:45.145424"], ["updated_at", "2020-04-19 01:42:45.145424"]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[35m (197.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+Completed 200 OK in 256ms (ActiveRecord: 200.6ms)
+
+
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:42:45 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:42:46 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:42:47 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:42:47 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started POST "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:42:48 -0300
+Processing by Api::V1::FavoritesController#create as JSON
+  Parameters: {"favoritable_type"=>"Song", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[36mFavorite Create (0.9ms)[0m  [1m[32mINSERT INTO "favorites" ("user_id", "favoritable_type", "favoritable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6], ["created_at", "2020-04-19 01:42:48.677027"], ["updated_at", "2020-04-19 01:42:48.677027"]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+  [1m[35m (201.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/favorites_controller.rb:10
+Completed 200 OK in 232ms (ActiveRecord: 203.7ms)
+
+
+Started GET "/album/2" for 127.0.0.1 at 2020-04-18 22:42:51 -0300
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"album/2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 69ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/albums/2" for 127.0.0.1 at 2020-04-18 22:42:52 -0300
+Processing by Api::V1::AlbumsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mAlbum Load (0.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/albums_controller.rb:3
+  Rendering api/v1/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Album"], ["name", "cover"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:2
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:3
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."album_id" = ?[0m  [["album_id", 2]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:5
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 5]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 6]]
+  ↳ app/models/user.rb:11
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Song"], ["name", "file"], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/api/v1/albums/show.json.jbuilder:8
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" = ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["favoritable_id", 7]]
+  ↳ app/models/user.rb:11
+  Rendered api/v1/albums/show.json.jbuilder (27.7ms)
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389/the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:42:52 -0300
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0fb20216007517f3f9014818071bac2bbcf08389", "filename"=>"the_great_bear"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (1.9ms) [0m[34mGenerated URL for file at key: 3sbBpXDYvC2EqXE4nbCwncDK (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0Nzo1Mi4zMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--97a5174753d061eb4c1cea20ae4b018b50c016cc/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0Nzo1Mi4zMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--97a5174753d061eb4c1cea20ae4b018b50c016cc/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0Nzo1Mi4zMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--97a5174753d061eb4c1cea20ae4b018b50c016cc/the_great_bear.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22the_great_bear.jpg%22%3B+filename%2A%3DUTF-8%27%27the_great_bear.jpg" for 127.0.0.1 at 2020-04-18 22:42:52 -0300
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"the_great_bear.jpg\"; filename*=UTF-8''the_great_bear.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWRNM05pUW5CWVJGbDJRekpGY1ZoRk5HNWlRM2R1WTBSTEJqb0dSVlE2RUdScGMzQnZjMmwwYVc5dVNTSlBhVzVzYVc1bE95Qm1hV3hsYm1GdFpUMGlkR2hsWDJkeVpXRjBYMkpsWVhJdWFuQm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWQwYUdWZlozSmxZWFJmWW1WaGNpNXFjR2NHT3daVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWQT09IiwiZXhwIjoiMjAyMC0wNC0xOVQwMTo0Nzo1Mi4zMTFaIiwicHVyIjoiYmxvYl9rZXkifX0=--97a5174753d061eb4c1cea20ae4b018b50c016cc", "filename"=>"the_great_bear"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:43:02 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (1.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:43:03 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:43:03 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/5/favorite" for 127.0.0.1 at 2020-04-18 22:43:03 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:04 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
+Started DELETE "/api/v1/songs/6/favorite" for 127.0.0.1 at 2020-04-18 22:43:05 -0300
+Processing by Api::V1::FavoritesController#destroy as JSON
+  Parameters: {"favoritable_type"=>"Song", "song_id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."favoritable_type" = ? AND "favorites"."favoritable_id" IS NULL LIMIT ?[0m  [["user_id", 1], ["favoritable_type", "Song"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/favorites_controller.rb:15
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/api/v1/favorites_controller.rb:16:in `destroy'
