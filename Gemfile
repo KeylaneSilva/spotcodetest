@@ -6,6 +6,10 @@ ruby '2.5.1'
 #autenticação
 gem 'devise'
 
+gem 'rack-cors'
+
+gem 'serviceworker-rails'
+
 gem 'webpacker', '~> 5.0', '>= 5.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
